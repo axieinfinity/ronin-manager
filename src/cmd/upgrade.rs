@@ -89,7 +89,7 @@ pub fn stop_services() {
 }
 
 pub fn start_new_services() {
-    duct::cmd("docker-compose", vec!["up", "-d"]).run().unwrap();
+    duct::cmd("docker-compose", vec!["--env-file", "~/.skymavis/.env", "up", "-d"]).run().unwrap();
 }
 
 pub fn delete_old_location(old_dir: &Path) {
