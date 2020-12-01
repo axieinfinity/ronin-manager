@@ -1,7 +1,7 @@
 mod install;
+mod pull;
 mod start;
 mod stop;
-mod pull;
 mod upgrade;
 mod wipe;
 
@@ -10,8 +10,7 @@ use clap_nested::Commander;
 pub fn commander<'a>() -> Commander<'a, (), ()> {
     Commander::new()
         .options(|app| {
-            app
-                .name(clap::crate_name!())
+            app.name(clap::crate_name!())
                 .version(clap::crate_version!())
                 .about(clap::crate_description!())
                 .author(clap::crate_authors!())

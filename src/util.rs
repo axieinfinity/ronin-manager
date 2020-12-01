@@ -74,10 +74,7 @@ pub fn make_docker_runable() {
         .is_err()
     {
         println!("Starting docker services ...");
-        duct::cmd(
-            "sudo",
-            vec!["service", "docker", "start"],
-        )
+        duct::cmd("sudo", vec!["service", "docker", "start"])
             .run()
             .unwrap();
 
@@ -86,8 +83,8 @@ pub fn make_docker_runable() {
             "sudo",
             vec!["usermod", "-aG", "docker", &std::env::var("USER").unwrap()],
         )
-            .run()
-            .unwrap();
+        .run()
+        .unwrap();
 
         println!(
             "{}. {}",
