@@ -5,7 +5,7 @@ Usage:
 
 * Initiate the `.env` file
 ```shell script
-cp config/[test|main].env .env
+cp config/[test|main].env ~/.skymavis/.env
 ```
 * Then open `.env` file and fill in remaining variables
 * Start services. You might need to log out and log back in after install.

@@ -1,7 +1,7 @@
 version: "3"
 services:
   node:
-    image: andyaxie/testnet:v2.0.0-80128e
+    image: docker.axieinfinity.co/testnet:v2.0.0-80128e
     restart: always
     hostname: node
     container_name: node
@@ -19,7 +19,7 @@ services:
       - NETWORK_ID=${NETWORK_ID}
       - ETHSTATS_ENDPOINT=${INSTANCE_NAME}:${CHAIN_STATS_WS_SECRET}@${CHAIN_STATS_WS_SERVER}:443
   oracle-db:
-    image: postgres:latest
+    image: postgres:13
     restart: always
     hostname: oracle-db
     container_name: oracle-db
@@ -32,7 +32,7 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
   oracle:
-    image: andyaxie/oracle:v0.2.0-a25ad1
+    image: docker.axieinfinity.co/oracle:v0.2.1-16aa50
     restart: always
     hostname: oracle
     container_name: oracle
