@@ -1,3 +1,5 @@
+min_kept_tasks = 1000
+
 [mainchain]
   # An endpoint that can query ethereum data, i.e. Infura or Alchemy like
   endpoint = ""
